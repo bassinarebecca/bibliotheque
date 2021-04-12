@@ -6,38 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Gestion des livre</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css")}}">
+   <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css")}}">
                 <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/ionicons/dist/css/ionicons.css")}}">
-                <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css")}}">
+                <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css")}}"> --}}
                 <link rel="stylesheet" href="{{asset("assets/vendors/css/vendor.bundle.base.css")}}">
                 <link rel="stylesheet" href="{{asset("assets/vendors/css/vendor.bundle.addons.css")}}">
                 <link rel="stylesheet" href="css.css">
                 <link rel="stylesheet" href="">
-                <!-- endinject -->
-                <!-- plugin css for this page -->
-                <!-- End plugin css for this page -->
-                <!-- inject:css -->
+
                 <link rel="stylesheet" href="{{asset("assets/css/shared/style.css")}}">
                 <!-- endinject -->
                 <!-- Layout styles -->
-                <link rel="stylesheet" href="{{asset("assets/css/demo_1/style.css")}}">
+                 <link rel="stylesheet" href="{{asset("assets/css/demo_1/style.css")}}">
                 <!-- End Layout styles -->
-                <link rel="shortcut icon" href="{{asset("assets/images/favicon.ico")}}" />
-    {{-- <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css"> --}}
+                 <link rel="shortcut icon" href="{{asset("assets/images/favicon.ico")}}" />
+     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="assets/css/shared/style.css">
+     <link rel="stylesheet" href="assets/css/shared/style.css">
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/demo_1/style.css">
     <!-- End Layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+     <link rel="shortcut icon" href="assets/images/favicon.ico" />
   </head>
   <body>
     <div class="container-scroller">
@@ -105,7 +102,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
-                  {{-- <div class="preview-thumbnail">
+                  <div class="preview-thumbnail">
                     <img src="assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                   </div> --}}
                   <div class="preview-item-content flex-grow py-2">
@@ -218,7 +215,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/forms/basic_elements.html">
+                <a class="nav-link" href="{{url("recherche")}}">
                   <i class="menu-icon typcn typcn-shopping-bag"></i>
                   <span class="menu-title">Recherche</span>
                 </a>
@@ -254,24 +251,46 @@
             <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
             <!------ Include the above in your HEAD tag ---------->
 
-            <div class="container">
-                <div class="row col-md-6 col-md-offset-2 custyle">
-                <table class="table table-striped custab">
-                <thead>
-                <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
-                    <tr>
-                        <th>Titre</th>
-                        <th>Auteur</th>
-                        <th>Type_livre</th>
-                        <th>annee_parution</th>
-                        <th>Pays</th>
+{{-- Listes des livres --}}
+<div class="container">
 
-                        <th class="text-center">Action</th>
-                    </tr>
-                </thead>
-                </table>
-                </div>
-            </div>                <!-- container-scroller -->
+    <div class="the-block">
+    <table class="table table-hover text-nowrap text-center" id="exemple1">
+        <tbody>
+            <tr>
+
+                    <th>  <div class="notice notice-primary"> <strong>Titre</strong> </div></th>
+                    <th>  <div class="notice notice-primary "> <strong>Auteur</strong>  </div></th>
+                    <th>  <div class="notice notice-primary"> <strong>Type_livre</strong>  </div></th>
+                    <th>  <div class="notice notice-danger"> <strong>Pays</strong>  </div></th>
+                    <th>  <div class="notice notice-primary"> <strong>Annee_parution</strong>  </div></th>
+                    <th width="280px">  <div class="notice notice-primary"> <strong></strong> Action </div></th>
+
+            </tr>
+             @foreach ($livres as $livre)
+            <tr>
+
+                <td><div class="notice notice-danger"> {{$livre->titre}}</div></td>
+                <td><div class="notice notice-danger"> {{$livre->auteur}} </div></td>
+                <td> <div class="notice notice-danger"> {{$livre->type_livre}} </div></td>
+                <td><div class="notice notice-danger">{{$livre->pays}} </div></td>
+                <td><div class="notice notice-danger">{{$livre->annee_parution}} </div></td>
+
+
+           </tr>
+        </tbody>
+
+
+            @endforeach
+
+    </table>
+</div>
+
+
+{{-- fin listes des libvres --}}
+
+
+                     <!-- container-scroller -->
                 <!-- plugins:js -->
                 <script src="{{asset("assets/vendors/js/vendor.bundle.base.js")}}"></script>
                 <script src="{{asset("assets/vendors/js/vendor.bundle.addons.js")}}"></script>

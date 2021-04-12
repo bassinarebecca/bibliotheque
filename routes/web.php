@@ -18,14 +18,17 @@ Route::get('/', function () {
 });
 //route sur ajouter_livre
 Route::get('ajout','ajoutController@ajout');
-Route::post('ajout','ajoutController@postAjout');
+Route::post('dash-ajout','ajoutController@postAjout');
 
-// ------
+
 Route::get('login','authController@index');
 Route::post('post-login','authController@postLogin');
 Route::get('register','authController@register');
 Route::post('post-register','authController@postRegister');
-Route::get('dashboard','authController@dashboard');
+Route::get('/dashboard','authController@dashboard');
 Route::get('logout','authController@logout');
 
 
+//recherche
+Route::get('recherche','ajoutController@recherche');
+Route::post('result','ajoutController@rechercheresult');

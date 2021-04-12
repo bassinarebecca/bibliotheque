@@ -5,40 +5,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Gestion des livre</title>
-
     <!-- plugins:css -->
-    <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css")}}">
+   <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css")}}">
                 <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/ionicons/dist/css/ionicons.css")}}">
-                <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css")}}">
+                <link rel="stylesheet" href="{{asset("assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css")}}"> --}}
                 <link rel="stylesheet" href="{{asset("assets/vendors/css/vendor.bundle.base.css")}}">
                 <link rel="stylesheet" href="{{asset("assets/vendors/css/vendor.bundle.addons.css")}}">
                 <link rel="stylesheet" href="css.css">
                 <link rel="stylesheet" href="">
-                <!-- endinject -->
-                <!-- plugin css for this page -->
-                <!-- End plugin css for this page -->
-                <!-- inject:css -->
+
                 <link rel="stylesheet" href="{{asset("assets/css/shared/style.css")}}">
                 <!-- endinject -->
                 <!-- Layout styles -->
-                <link rel="stylesheet" href="{{asset("assets/css/demo_1/style.css")}}">
+                 <link rel="stylesheet" href="{{asset("assets/css/demo_1/style.css")}}">
                 <!-- End Layout styles -->
-                <link rel="shortcut icon" href="{{asset("assets/images/favicon.ico")}}" />
-    {{-- <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css"> --}}
+                 <link rel="shortcut icon" href="{{asset("assets/images/favicon.ico")}}" />
+     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="assets/css/shared/style.css">
+     <link rel="stylesheet" href="assets/css/shared/style.css">
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/demo_1/style.css">
     <!-- End Layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+     <link rel="shortcut icon" href="assets/images/favicon.ico" />
   </head>
   <body>
     <div class="container-scroller">
@@ -106,7 +102,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
-                  {{-- <div class="preview-thumbnail">
+                  <div class="preview-thumbnail">
                     <img src="assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                   </div> --}}
                   <div class="preview-item-content flex-grow py-2">
@@ -219,7 +215,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/forms/basic_elements.html">
+                <a class="nav-link" href="{{url("")}}">
                   <i class="menu-icon typcn typcn-shopping-bag"></i>
                   <span class="menu-title">Recherche</span>
                 </a>
@@ -249,102 +245,52 @@
             </div>
             <!-- Page Title Header Ends-->
 
-            <div class="container-scroller">
-                <div class="container-fluid page-body-wrapper full-page-wrapper">
-                  <div class="content-wrapper d-flex align-items-center auth register-bg-1 theme-one">
-                    <div class="row w-100">
-                      <div class="col-lg-4 mx-auto">
-                        <h2 class="text-center mb-4">Ajouter un livre</h2>
-                        <div class="auto-form-wrapper">
-                          <form method="POST" action="{{ url('ajout') }}">
-                              @csrf
-                            <div class="form-group">
-                              <div class="input-group">
-                                <input type="text" class="form-control"  name="titre" value="{{ old('titre') }}" placeholder="Titre">
-                                <div class="input-group-append">
-                                  <span class="input-group-text">
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group">
-                                <input type="text" class="form-control"  name="auteur" value="{{ old('auteur ') }}" placeholder="Auteur">
-                                <div class="input-group-append">
-                                  <span class="input-group-text">
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Type :</label>
-                              <div class="input-group">
-                                    <select name="type_livre" class="form-control" id="type_livre"placeholder="Type_livre" id="">
-                                        <option value="Romantique">Romantique</option>
-                                        <option value="Romantique">poétique</option>
-                                        <option value="Romantique">theatrale</option>
-                                        <option value="Romantique">science</option>
-                                        <option value="Romantique">Livre_enfant</option>
-                                        <option value="Romantique">Romantique</option>
 
-                                    </select>
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <!------ Include the above in your HEAD tag ---------->
 
-                                <div class="input-group-append">
-                                  <span class="input-group-text">
+{{-- Listes des livres --}}
+<div class="container">
 
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Pays :</label>
-                              <div class="input-group">
-                                    <select name="pays" class="form-control" id="type_livre"placeholder="Type_livre" id="">
-                                        <option value="Burkina faso">Burkina Faso</option>
-                                        <option value="Mali">Mali</option>
-                                        <option value="Niger">Niger</option>
-                                        <option value="France">France</option>
-                                        <option value="USA">USA</option>
-                                        <option value="Ghana">Ghana</option>
+    <div class="the-block">
+    <table class="table table-hover text-nowrap text-center" id="exemple1">
+        <tbody>
+            <tr>
 
-                                    </select>
+                    <th>  <div class="notice notice-primary"> <strong>Titre</strong> </div></th>
+                    <th>  <div class="notice notice-primary "> <strong>Auteur</strong>  </div></th>
+                    <th>  <div class="notice notice-primary"> <strong>Type_livre</strong>  </div></th>
+                    <th>  <div class="notice notice-danger"> <strong>Pays</strong>  </div></th>
+                    <th>  <div class="notice notice-primary"> <strong>Annee_parution</strong>  </div></th>
+                    <th width="280px">  <div class="notice notice-primary"> <strong></strong> Action </div></th>
 
-                                <div class="input-group-append">
-                                  <span class="input-group-text">
+            </tr>
+             @foreach ($livres as $livre)
+            <tr>
 
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group">
-                                <input type="date" class="form-control" name="annee_parution" placeholder="Annee_parution">
-                                <div class="input-group-append">
-                                  <span class="input-group-text">
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
+                <td><div class="notice notice-danger"> {{$livre->titre}}</div></td>
+                <td><div class="notice notice-danger"> {{$livre->auteur}} </div></td>
+                <td> <div class="notice notice-danger"> {{$livre->type_livre}} </div></td>
+                <td><div class="notice notice-danger">{{$livre->pays}} </div></td>
+                <td><div class="notice notice-danger">{{$livre->annee_parution}} </div></td>
 
-                            {{-- <div class="form-group d-flex justify-content-center">
-                              <div class="form-check form-check-flat mt-0">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" checked> I agree to the terms </label>
-                              </div>
-                            </div> --}}
-                            <div class="form-group">
-                              <button type="submit" class="btn btn-primary submit-btn btn-block">Ajouter un livre</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- content-wrapper ends -->
-                </div>
-                <!-- page-body-wrapper ends -->
-              </div>
-                <!-- container-scroller -->
+
+           </tr>
+        </tbody>
+
+
+            @endforeach
+
+    </table>
+</div>
+
+
+{{-- fin listes des libvres --}}
+
+
+                     <!-- container-scroller -->
                 <!-- plugins:js -->
                 <script src="{{asset("assets/vendors/js/vendor.bundle.base.js")}}"></script>
                 <script src="{{asset("assets/vendors/js/vendor.bundle.addons.js")}}"></script>

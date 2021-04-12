@@ -32,5 +32,39 @@ class AjoutController extends Controller
         return FacadesRedirect::to("dashboard")->withSuccess('Enregistrer ');
     }
 
+ public function show()
+
+    {
+      return redirect("dashboard");
+    }
+
+    public function recherche()
+    {
+        return view('recherche');
+    }
+    public function rechercheresult(Request $request)
+    {
+        $search=null;
+        $count=null;
+           switch ($request->filtre) {
+               case 'type':
+                   $search=Livre::where("type_livre","=",$request->type)->get();
+                   $count=count($search);
+                   break;
+                case 'pays':
+                    $search=Livre::where("pays","=",$request->pays)->get();
+                    $count=count($search);
+                   break;
+                case 'auteur':
+                    $search=Livre::where("auteur","=",$request->auteur)->get();
+                    $count=count($search);
+                    break;
+                case 'parrution':
+                    $search=Livre::where("annee_parution","=",$request->parrution)->get();
+                    $count=count($search);
+                    break;
+           }
+        return view('result' ,compact("search","count"));
+    }
 
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response;
 use App\User;
+use App\Livre;
 use Illuminate\Auth\SessionGuard;
 use Illuminate\Routing\Redirector;
 use Illuminate\support\Facades\Auth;
@@ -56,7 +57,8 @@ class AuthController extends Controller
     {
 
       if(Auth::check()){
-        return view('dashboard');
+        $livres = Livre::all();
+        return view('dashboard',compact('livres'));
       }
        return FacadesRedirect::to("login")->withSuccess('Opps! You do not have access');
     }

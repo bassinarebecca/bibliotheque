@@ -8,3 +8,4 @@ class Livre extends Model
 {
     protected $guarded=[];
 }
+
